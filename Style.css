@@ -1,0 +1,42 @@
+html {
+  background-image: url("bkg3.jpg");
+  color: aliceblue;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Source Serif 4", serif;
+  font-size: 23px;
+}
+
+img {
+  width: 100px;
+  width: 200px;
+}
+
+td {
+  box-sizing: content-box;
+  width: 22%;
+  display: inline-block;
+  outline: none;
+  border-radius: 15px;
+  margin: 55px;
+  padding: 20px;
+  align-items: center;
+}
+
+td::first-line {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+td:nth-child(odd) {
+  border-color: #b7ce26;
+  box-shadow: 0 0 15px #b7ce26;
+}
+
+td:nth-child(even) {
+  border-color: #ef282e;
+  box-shadow: 0 0 15px #ef282e;
+}
+
+span {
+  float: right;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="Style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <img src="logo.jpg" />
+    <table>
+      <tbody id="data-output"></tbody>
+    </table>
+
+    <script type="text/javascript">
+      fetch("./data.json")
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          let placeholder = document.querySelector("#data-output");
+          let out = "";
+          for (let info of data) {
+            out += `
+              <td>
+                
+                ${info.name}
+                <span class = 'fa fa-star'> </span> </br></br>
+                Height: ${info.height} </br> 
+                Gender: ${info.gender} </br> 
+                
+              </td>
+              `;
+          }
+          placeholder.innerHTML = out;
+        })
+        .catch(function (err) {
+          console.log(err);
+        });
+    </script>
+  </body>
+</html>
